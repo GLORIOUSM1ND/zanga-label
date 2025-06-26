@@ -7,7 +7,7 @@ Zanga Wears is a stylish and modern streetwear fashion website built with **Reac
 ## 🔥 Live Preview
 
 🌐 [Visit Live Site](https:\\zangalabel.com)  
-> (Deployed with Netlify — replace with your actual link)
+> (Deployed with Netlify)
 
 ---
 
