@@ -5,11 +5,12 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  server: {
-    host: true, // allow external access, including mobile or ngrok
-    port: 8080,
-    allowedHosts: ['.ngrok-free.app'], // ✅ allow ngrok public preview
+  build: {
+    rollupOptions: {
+      external: ['@rollup/rollup-linux-x64-gnu']
+    }
   },
+
   plugins: [
     react(),
     mode === 'development' &&
