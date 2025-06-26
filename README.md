@@ -1,54 +1,106 @@
-# React + TypeScript + Vite
+# 🧢 Zanga Wears - Streetwear Fashion Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Zanga Wears is a stylish and modern streetwear fashion website built with **React**, **TailwindCSS**, and **Vite**. Designed to showcase bold fashion, this mini online store allows users to add products to a cart, fill delivery details, and finalize orders via WhatsApp — without traditional online checkout for improved **security** and **simplicity**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔥 Live Preview
 
-## Expanding the ESLint configuration
+🌐 [Visit Live Site](https:\\zangalabel.com)  
+> (Deployed with Netlify — replace with your actual link)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🧰 Built With
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- [React](https://reactjs.org/) + TypeScript
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
+- [ShadCN UI](https://ui.shadcn.dev/) components
+- Mobile-first responsive layout
+- WhatsApp integration for checkout
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 💡 Features
+
+✅ Fully responsive and mobile-friendly  
+✅ Product showcase with images  
+✅ Add to cart system (no backend)  
+✅ Delivery form with input validation  
+✅ WhatsApp order confirmation (pre-filled message with cart details)  
+✅ Animated UI transitions and polished design  
+✅ Easy to customize or expand
+
+---
+
+## 📁 Folder Structure
+zanga-wears/
+├── public/ → Static images and assets
+├── src/
+│ ├── components/ → Reusable UI components
+│ ├── pages/ → Page views
+│ ├── hooks/ → Custom React hooks
+│ ├── lib/ → Utilities
+│ ├── App.tsx → Main app structure
+│ └── main.tsx → Entry point
+├── tailwind.config.ts
+├── vite.config.ts
+├── package.json
+└── index.html
+
+
+---
+
+## 🛠️ Getting Started
+
+Clone the repo:
+
+```bash
+git clone https://github.com/GLORIOUSM1ND/zanga-label.git
+cd zanga-label
+
+Install dependencies:
+
+bash
+Copy code
+npm install
+Run in development:
+
+bash
+Copy code
+npm run dev
+Build for production:
+
+bash
+Copy code
+npm run build
+🔐 Security Choice
+This website does not process online payments.
+Instead, it:
+
+Collects delivery details
+
+Shows bank payment info
+
+Redirects user to WhatsApp to submit proof
+
+This limits attack surface and improves security for Nigerian users.
+
+🤝 Collaborate or Contribute
+Feel free to fork this repo, use it as a base for your client projects, or contribute ideas.
+You can also reach out for collaboration:
+
+📧Gloriousj231@proton.me
+💬 Chat on WhatsApp
+
+
+🏁 License
+This project is open for learning and personal use.
+Contact the author if you want to license for commercial resale.
+
+✨ Quote
+“Style is a way to say who you are without having to speak.” – Rachel Zoe
+Zanga Wears is streetwear for the bold. Stay fresh. Stay fly.
+
+
