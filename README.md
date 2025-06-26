@@ -1,6 +1,6 @@
-# 🧢 Zanga Wears - Streetwear Fashion Website
+# 🧢 Zanga label - Streetwear Fashion Website
 
-Zanga Wears is a stylish and modern streetwear fashion website built with **React**, **TailwindCSS**, and **Vite**. Designed to showcase bold fashion, this mini online store allows users to add products to a cart, fill delivery details, and finalize orders via WhatsApp — without traditional online checkout for improved **security** and **simplicity**.
+Zanga Label is a stylish and modern streetwear fashion website built with **React**, **TailwindCSS**, and **Vite**. Designed to showcase bold fashion, this mini online store allows users to add products to a cart, fill delivery details, and finalize orders via WhatsApp — without traditional online checkout for improved **security** and **simplicity**.
 
 ---
 
@@ -63,17 +63,15 @@ cd zanga-label
 Install dependencies:
 
 bash
-Copy code
+
 npm install
 Run in development:
 
 bash
-Copy code
 npm run dev
 Build for production:
 
 bash
-Copy code
 npm run build
 🔐 Security Choice
 This website does not process online payments.
