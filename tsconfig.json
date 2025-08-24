@@ -5,6 +5,7 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
+    "types": ["vite/client", "@react-three/fiber", "@react-three/drei"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]

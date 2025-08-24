@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@900&family=Orbitron:wght@800&display=swap');
+
+/* === BASE === */
+.zanga-system {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000814;
+  background-image: 
+    radial-gradient(circle at center, #001022 0%, #000610 70%, #000000 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+  opacity: 1;
+}
+
+/* === ORBITING STARS (unchanged, still beautiful) === */
+.orbit-ring {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.orbit-ring::before,
+.orbit-ring::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  opacity: 0.9;
+}
+
+.orbit-1::before {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #FFD700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.9);
+  animation: orbitGlow 6s linear infinite;
+}
+
+.orbit-2::before {
+  right: 10%;
+  top: 20%;
+  width: 8px;
+  height: 8px;
+  background: #00BFFF;
+  box-shadow: 0 0 12px rgba(0, 191, 255, 0.8);
+  animation: orbitGlow 8s linear infinite reverse;
+}
+
+.orbit-2::after {
+  left: 15%;
+  bottom: 15%;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  animation: orbitGlow 9s linear infinite 1s;
+}
+
+.orbit-3::before {
+  left: 25%;
+  bottom: 10%;
+  width: 7px;
+  height: 7px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  animation: orbitGlow 10s linear infinite 0.5s;
+}
+
+.zanga-system.active .orbit-ring {
+  animation: fadeInOrbit 0.5s ease-out 0.8s forwards;
+  opacity: 0.7;
+}
+
+@keyframes fadeInOrbit { to { opacity: 0.7; } }
+
+@keyframes orbitGlow {
+  0% { transform: translateY(-50%) rotate(0deg) translateX(160px); }
+  100% { transform: translateY(-50%) rotate(360deg) translateX(160px); }
+}
+
+/* === BRAND PYRAMID — UNIFORM SPACING === */
+.brand-pyramid {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.2em; /* ✅ Equal vertical spacing */
+  height: 300px; /* Fixed height for consistent rhythm */
+  opacity: 0;
+}
+
+.zanga-core {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 5.4rem;
+  font-weight: 900;
+  color: #FFD700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.4) !important;
+  margin: 0;
+  letter-spacing: 0.3rem;
+  line-height: 1;
+  animation: zangaBounce 0.5s ease-in-out 0.2s 3 forwards !important;
+  transform-origin: bottom center;
+}
+
+@keyframes zangaBounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.label-orbit {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 3.0rem;
+  font-weight: 800;
+  color: #00BFFF;
+  text-shadow: 0 0 18px rgba(0, 191, 255, 0.8), 0 0 35px rgba(0, 191, 255, 0.4);
+  margin: 0;
+  letter-spacing: 0.35rem;
+  line-height: 1;
+}
+
+.wears-moon {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.8rem; /* ✅ Smaller than LABEL */
+  font-weight: 700;
+  color: #FFFFFF;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.4);
+  margin: 0;
+  letter-spacing: 0.4rem;
+  line-height: 1;
+  /* ✅ Slightly lowered for balance */
+  transform: translateY(4px);
+}
+
+/* === ANIMATIONS — CLEAN & SEQUENCED === */
+.zanga-system.active .brand-pyramid {
+  animation: fadeStackIn 0.5s ease-out 0.2s forwards;
+}
+
+@keyframes fadeStackIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.zanga-system.active .zanga-core {
+  animation: popZanga 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+}
+
+.zanga-system.active .label-orbit {
+  animation: slideLabel 0.6s ease-out 0.8s forwards;
+}
+
+.zanga-system.active .wears-moon {
+  animation: fadeWears 05s ease-out 1.3s forwards;
+}
+
+@keyframes popZanga {
+  0% { opacity: 0; transform: scale(0.7); }
+  70% { transform: scale(1.03); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideLabel {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeWears {
+  0% { opacity: 0; letter-spacing: 2rem; }
+  100% { opacity: 1; letter-spacing: 0.4rem; }
+}
+
+/* After all in: subtle float */
+.zanga-system.active .brand-pyramid {
+  animation: fadeStackIn 0.7s ease-out 0.5s forwards,
+              logoFloat 3s ease-in-out 4.0s infinite alternate;
+}
+
+@keyframes logoFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+/* === NEW EXIT: GLITCH-DISSOLVE + PARTICLE FADE === */
+.zanga-system.dissolving {
+  opacity: 1;
+  animation: glitchDissolve 1.2s ease-out forwards;
+}
+
+@keyframes glitchDissolve {
+  0% {
+    opacity: 1;
+    clip-path: inset(0);
+    filter: brightness(1);
+  }
+  40% {
+    opacity: 0.8;
+    clip-path: inset(10% 5% 15% 8%);
+    filter: brightness(1.1) hue-rotate(3deg);
+  }
+  70% {
+    opacity: 0.5;
+    clip-path: inset(30% 20% 35% 25%);
+    transform: scale(1.02) translateX(1px);
+  }
+  100% {
+    opacity: 0;
+    clip-path: inset(50% 30% 50% 30%);
+    transform: scale(1.05) rotate(0.5deg);
+    filter: brightness(0.7);
+  }
+}
+
+/* Add digital noise texture on exit */
+.zanga-system.dissolving::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  animation: noiseFade 1.2s forwards;
+  pointer-events: none;
+  opacity: 0;
+}
+
+@keyframes noiseFade {
+  to { opacity: 0.15; }
+}
+
+.splash-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000814; /* Your cosmic dark */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.6s ease-out; /* Smooth fade when exiting */
+  overflow: hidden;
+}
+
+.splash-container.fade-out {
+  opacity: 0;
+}

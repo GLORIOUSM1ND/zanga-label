@@ -299,3 +299,13 @@ html {
 .flip-card img:nth-child(2) {
   transform: rotateY(180deg);
 }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background: #000814; /* ← Must match your splash background */
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Outfit', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}

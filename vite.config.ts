@@ -2,15 +2,24 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
-// https://vitejs.dev/config/ 
 export default defineConfig({
-  plugins: [
-    react(),
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-    // Remove conditions unless needed
   },
+  assetsInclude: ['**/*.json'], // This will make sure font files are included
+  server: {
+    port: 3000,
+    host: true,
+    hmr: {
+      host: 'localhost',
+    },
+    allowedHosts: [
+      'e3cc9e636a7c.ngrok-free.app',
+      '.ngrok-free.app'  // This will allow all ngrok subdomains
+    ]
+  },
+  publicDir: 'public',
 });

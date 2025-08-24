@@ -6,7 +6,7 @@ import { ArrowRight, Star, Zap } from 'lucide-react';
 const Hero = () => {
   const backgroundImages = [
     "/zanga-images/hero3.jpg",
-    "/zanga-images/hero2.jpg",
+    "/zanga-images/hero1.jpg",
     "/zanga-images/hero5.jpg"
   ];
 
@@ -109,7 +109,7 @@ const Hero = () => {
           {/* Signature Quote */}
           <div className="mb-8 animate-fade-in-up">
             <blockquote className="text-2xl md:text-3xl font-bold mb-4 leading-relaxed">
-              "Real Wears for Real Guys. ⚡"
+              Real Wears for The Real Guys⚡
             </blockquote>
             <p className="text-xl md:text-2xl text-yellow-400 font-semibold">
               ZANGA is not just fashion — it's a identity.
@@ -140,7 +140,7 @@ const Hero = () => {
           {/* What's Hot Banner */}
           <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-black px-8 py-4 rounded-full inline-block animate-pulse shadow-2xl">
             <span className="font-bold text-lg">
-              🔥 WHAT'S HOT: Trucker Cap - Limited Time 35,000 (Was ₦40,000)
+              🔥 WHAT'S HOT: 🔥PRIVATE CLUB EXCLUSIVE – By Zanga Label 🔥 Limited Edition 45,000 (Was ₦50,000)
             </span>
           </div>
         </div>
